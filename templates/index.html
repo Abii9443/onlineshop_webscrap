@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--link rel="stylesheet" href="./static/style.css"-->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/main.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Price Comparison</title>
+  </head>
+  <body>
+    <div class='dashboard'>
+        <div class="dashboard-nav">
+            <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="/index1"class="brand-logo"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a>
+              
+            </header>
+           
+        </div>
+        <div class='dashboard-app'>
+          <div class="row">
+            <!--header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header-->
+            <div class="col-sm">
+            <form action="{{ url_for('scrap')}}"method="post">  
+              <div class="container-fluid">
+                      <div class="card-deck"> 
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Flikcart</h5>
+                              <div class="container">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                          <div class="input-group" id="adv-search ">
+                                              <input type="text" name='mobile_name' id="product" class="form-control" placeholder="Search mobile" />
+                                              <input type="text" name='scrap_pages' id="page" class="form-control" placeholder="No of scrap pages" />
+                                              <button type="submit"class="btn btn-success ml-2 mr-2"><i class="fa fa-download" aria-hidden="true"></i></button>
+                                              <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></i></button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+              </form>
+            </div>
+            <div class="col-sm">
+              <form action="{{ url_for('amazon')}}"method="post">  
+                <div class="container-fluid">
+                        <div class="card-deck"> 
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">Amazon</h5>
+                                <div class="container">
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="input-group" id="adv-search ">
+                                                <input type="text" name='amazon_mobile' id="Amazon_product" class="form-control" placeholder="Search mobile" />
+                                                <input type="text" name='amazon_scrap_pages' id="amazon_page" class="form-control" placeholder="No of scrap pages" />
+                                                 <button type="submit"class="btn btn-success ml-2 mr-2"><i class="fa fa-download" aria-hidden="true"></i></button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                </form>
+              </div>
+             
+                 
+        </div>
+        <br><br>
+        <form action="{{ url_for('compare')}}"method="post">  
+          <div class="container-fluid">
+                  <div class="card-deck"> 
+                      <div class="card">
+                        <div class="card-body">  
+                          <div class="container">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                      <div class="input-group" id="adv-search ">
+                                        <input class="form-control mr-2" type="text" name="mobile_name" id="name" placeholder="Search mobile"aria-label="Search">
+                                        
+                                        <input type="text" name='mobile_pages' id="pages_"class="form-control " placeholder="No of scrap pages" />
+                                        <button type="submit"class="btn btn-success ml-2 mr-2"><i class="fa fa-download" aria-hidden="true"></i></button>
+
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+          </form>
+          <form action="{{ url_for('single')}}"method="post">  
+            <div class="container-fluid">
+                    <div class="card-deck"> 
+                        <div class="card">
+                          <div class="card-body">  
+                            <div class="container">
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group" id="adv-search ">
+                                          <input class="form-control mr-2" type="text" name="single_mobile_name" id="name" placeholder="Mobile Name"aria-label="Search">
+                                          <input class="form-control mr-2" type="text" name="single_mobile_color" id="color" placeholder="Mobile color"aria-label="Search">
+                                          <input class="form-control mr-2" type="text" name="single_mobile_ram" id="ram" placeholder="RAM"aria-label="Search">
+                                          
+                                          <input type="text" name='single_mobile_storage' id="storage"class="form-control " placeholder="storage" />
+  
+                                          <button type="submit" class="btn btn-primary ml-2"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+            </form>
+        <!--form action="{{ url_for('compare')}}" class="form-inline my-2 my-lg-4"method="post">
+          <input class="form-control form-control-lg ml-3 mr-3 w-40" type="text" name="mobile_name" id="name" placeholder="Search mobile"aria-label="Search">
+          <input type="text" name='mobile_pages' id="pages_"class="form-control form-control-lg ml-3 mr-3 w-25" placeholder="No of scrap pages" />
+          <button class="btn btn-danger my-2 my-lg-0" type="submit">compare</button>
+        </form-->
+        <br><br>
+        {% if row_data %}
+        
+        <table style="color: azure;">
+         
+          <thead style="color: chocolate;font-size: larger;">
+  
+            <tr>
+              {% for col in column_names %}
+              <th>
+              
+                {{col}}
+               
+              </th>
+              {% endfor %}
+            </tr>
+  
+          </thead>
+          <tbody>
+            {% for row in row_data %}
+            <tr>
+              {% for col, row_ in zip(column_names, row) %}
+              <td>{{row_}}</td>
+              {% endfor %}
+            </tr>
+            
+            {% endfor %}
+            
+          </tbody>
+        </table>
+
+        {% endif %}
+      </div>
+         
+      </div>
+       
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
